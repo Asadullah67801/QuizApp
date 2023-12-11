@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+</head>
+<body>
+    
+
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+
+    <link rel="stylesheet " href="css/style.css">
+    
+</head>
+<body>
+    <section class="hero">
+    <div id="quiz-container">
+        <div id="question-container"></div>
+        <div id="options-container"></div>
+        <button onclick="submitAnswer()"class="submit-btn"  >Submit Answer</button>
+        <div id="result-container"></div>
+
+
+        <h4 class="message"><i>BEST OF LUCK</i></h4>
+    </div>
+
+
+
+    </section>
+
+
+
+    <!--Javascript-->
+    <script>
+        const quizData = [
+            {
+                question: "What is the capital of France?",
+                options: ["Berlin", "Madrid", "Paris", "Rome"],
+                correctAnswer: "Paris"
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                options: ["Venus", "Mars", "Jupiter", "Saturn"],
+                correctAnswer: "Mars"
+            },
+            {
+                question: "What is DFA stands for?",
+                options: ["Deterministic Finite Automata", "Non Deterministic Finite Automata", "Both", "None"],
+                correctAnswer: "Deterministic Finite Automata"
+            },
+            {
+                question: "2+2 answer is?",
+                options: ["4","2", "6", "none"],
+                correctAnswer: "4"
+            },
+            {
+                question: "what is OS",
+                options: ["Operating system", "Software", "Kernel", "none"],
+                correctAnswer: "Operating system"
+            },
+            {
+                question: "how many states in NFA",
+                options: ["one", "More than one", "None", "Each single state with one input"],
+                correctAnswer: "More than one"
+            },
+            // Add more questions as needed
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const optionsContainer = document.getElementById("options-container");
+            const resultContainer = document.getElementById("result-container");
+
+            questionContainer.textContent = quizData[currentQuestion].question;
+
+            optionsContainer.innerHTML = "";
+            quizData[currentQuestion].options.forEach((option, index) => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.onclick = () => selectAnswer(option);
+                optionsContainer.appendChild(button);
+            });
+
+            resultContainer.textContent = `Score: ${score}/${quizData.length}`;
+        }
+
+        function selectAnswer(selectedOption) {
+            const correctAnswer = quizData[currentQuestion].correctAnswer;
+
+            if (selectedOption === correctAnswer) {
+                score++;
+            }
+
+            currentQuestion++;
+
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const quizContainer = document.getElementById("quiz-container");
+            quizContainer.innerHTML = `<h2>Quiz Completed!</h2><p>Your final score is ${score}/${quizData.length}</p>`;
+        }
+
+        function submitAnswer() {
+            const selectedOption = document.querySelector('input[name="option"]:checked');
+            if (selectedOption) {
+                selectAnswer(selectedOption.value);
+            } else {
+                alert("Please select an option before submitting.");
+            }
+        }
+
+        // Initial load
+        loadQuestion();
+    </script>
+</body>
+</html>
+
+</body>
+</html>

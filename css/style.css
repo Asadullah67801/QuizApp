@@ -1,0 +1,69 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            margin: 0px;
+            padding: 0px;
+        }
+        .hero{
+            background-image: url("https://up.yimg.com/ib/th?id=OIP.UCzRNRLX5HiaL_q-204KyAHaEK&%3Bpid=Api&rs=1&c=1&qlt=95&w=215&h=120");
+
+
+
+            background-position:calc(60%);
+            background-size: cover;
+            min-height: 100vh;
+
+        }
+        .submit-btn{
+            color: white;
+            background-color: transparent;
+            border-bottom: 2px solid red;
+            padding: 5px 17px;
+            cursor: pointer;
+        }
+        .submit-btn:hover{
+
+            background-color: brown;
+            color: white;
+        }
+        
+        #quiz-container {
+            max-width: 600px;
+            background:linear-gradient( 360deg,yellow,black);
+            color:white;
+          top:50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          position: absolute;
+            border-radius: 8px;
+            height: 400px;;
+        }
+        #question-container {
+            border-bottom: 1px solid #ccc;
+            padding: 20px;
+        }
+        #options-container {
+            text-align: left;
+            padding: 20px;
+        }
+        #result-container {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+  #options-container button{
+    border: none;
+    margin:10px;
+    cursor: pointer;
+    padding: 8px 17px;
+    transition: 0.3s;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  #options-container button:hover{
+    background-color: brown;
+    color: white;
+  }
+  
