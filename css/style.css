@@ -6,22 +6,38 @@
             margin: 0px;
             padding: 0px;
         }
+        *{
+            margin: 0px;
+    
+
+
+
+            padding: 0px;
+        }
         .hero{
-            background-image: url("https://up.yimg.com/ib/th?id=OIP.UCzRNRLX5HiaL_q-204KyAHaEK&%3Bpid=Api&rs=1&c=1&qlt=95&w=215&h=120");
+            background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("https://up.yimg.com/ib/th?id=OIP.UCzRNRLX5HiaL_q-204KyAHaEK&%3Bpid=Api&rs=1&c=1&qlt=95&w=215&h=120");
 
 
 
             background-position:calc(60%);
             background-size: cover;
-            min-height: 100vh;
+            min-height: 70vh;
 
         }
         .submit-btn{
             color: white;
-            background-color: transparent;
-            border: 1px solid red;
-            border-radius: 5px;
-            padding: 8px 17px;
+            background: transparent;
+           
+
+border:none;
+border-bottom: 2px solid #888;
+margin-top: 30px;
+
+
+
+transition:0.3s;
+            
+            padding: 8px 20px;
             cursor: pointer;
         }
         .submit-btn:hover{
@@ -41,12 +57,14 @@
           
             background:linear-gradient( 360deg,gray,black);
             color:white;
-        position: absolute;
-        left: 50%;
-        top:50%;
-        transform: translate(-50%,-50%);
-            border-radius: 8px;
-            height: 400px;
+;
+
+            border-radius: 15px;
+            height: 350px;
+            position: absolute;
+            top:90%;
+            left: 50%;
+            transform: translate(-50%,-50%);
             width: 400px;
         }
         #question-container {
@@ -54,12 +72,19 @@
             padding: 20px;
             
         }
+        .hero h1{
+            color:white;
+            padding:50px 0;
+            font-size:40px;
+            font-family:sans-serif;
+
+        }
         #options-container {
             text-align: left;
             display:flex;
             justify-content: center;
       
-            padding: 20px;
+            
         }
         #result-container {
             font-weight: bold;
@@ -74,10 +99,20 @@
     transition: 0.3s;
     margin-top: 50px;
     justify-content: center;
+    background-color: transparent;
+    color: white;
     align-items: center;
   }
-  #options-container button:hover{
-    background-color: brown;
-    color: white;
+  h4{
+    margin:15px;
   }
+  #options-container button:hover{
+  
+  
+    transition: 0.3s;
+    color: white;
+    background-color: brown;
+
+  }
+  
   

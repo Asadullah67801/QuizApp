@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
-</head>
-<body>
+
     
 
 
@@ -23,6 +16,9 @@
 </head>
 <body>
     <section class="hero">
+
+
+        <h1>Harvard university Admission Quiz</h1>
     <div id="quiz-container">
         <div id="question-container"></div>
         <div id="options-container"></div>
@@ -33,7 +29,7 @@
         <h4 class="message"><i>BEST OF LUCK</i></h4>
 
 
-        <span>Created by Asadullah &copy;2023</span>
+        <span>Created by Asadullah &copy;      2023</span>
     </div>
 
 
@@ -74,6 +70,11 @@
                 question: "how many states in NFA",
                 options: ["one", "More than one", "None", "Each single state with one input"],
                 correctAnswer: "More than one"
+            },
+            {
+                question: "Who is Atif Aslam",
+                options: ["Pakistani singer", "Indian singer", "None", "Popstar"],
+                correctAnswer: "Pakistani singer"
             },
             // Add more questions as needed
         ];
@@ -117,9 +118,31 @@
 
         function showResult() {
             const quizContainer = document.getElementById("quiz-container");
-            quizContainer.innerHTML = `<h2>Quiz Completed!</h2><p>Your final score is ${score}/${quizData.length}</p>`;
+            quizContainer.innerHTML = `<h2>Quiz Completed!</h2><p><br>Your final score is ${score}/${quizData.length}</p>`;
           
         }
+        
+// ... (previous code)
+
+function showResult() {
+    const quizContainer = document.getElementById("quiz-container");
+    const resultContainer = document.getElementById("result-container");
+
+    let resultMessage = "";
+
+    if (score >= 0 && score <= 3) {
+        resultMessage = "You are fail.";
+    } else if (score >= 4 && score <= 7) {
+        resultMessage = "You are passed. Good!";
+    } else {
+        resultMessage = "Congratulations! You did great!";
+    }
+
+    quizContainer.innerHTML = `<h2>Quiz Completed!</h2><p>Your final score is ${score}/${quizData.length}</p>`;
+    resultContainer.textContent = resultMessage;
+}
+
+// ... (remaining code)
 
         function submitAnswer() {
             const selectedOption = document.querySelector('input[name="option"]:checked');
